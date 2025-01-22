@@ -19,7 +19,7 @@ function setup() {
   createCanvas(500, 600);
   background(255);
   pixelDensity(1);
-  frameRate(1);
+  frameRate(2);
 
   train1.resize(0, 600); 
   portraits2.resize(80, 0);
@@ -52,6 +52,7 @@ function draw() {
     }
   }
 
+
   for (let i = 0; i < 180; i++) { 
     let x = random(train1.width);
     let y = random(train1.height);
@@ -70,3 +71,5 @@ function draw() {
 
   counter += 0.02;
 }
+
+
