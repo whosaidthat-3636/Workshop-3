@@ -1,10 +1,9 @@
-let train1, train2, portraits2, portraits3, portraits4, portraits5, portraits6, portraits7, portraits8, portraits9; 
+let train1, portraits2, portraits3, portraits4, portraits5, portraits6, portraits7, portraits8, portraits9; 
 let counter = 0; 
 let images = []; 
 
 function preload() {
   train1 = loadImage('images/train1.jpeg');
-  train2 = loadImage('images/train2.jpeg');
   portraits2 = loadImage('images/portraits2.jpg');
   portraits3 = loadImage('images/portraits3.jpg');
   portraits4 = loadImage('images/portraits4.jpg');
@@ -19,7 +18,7 @@ function setup() {
   createCanvas(500, 600);
   background(255);
   pixelDensity(1);
-  frameRate(2);
+  frameRate(1);
 
   train1.resize(0, 600); 
   portraits2.resize(80, 0);
@@ -31,28 +30,20 @@ function setup() {
   portraits8.resize(82, 0);
   portraits9.resize(82, 0);
 
-  images = [
-    { img: portraits9, x: 360, y: 267 },
-    { img: portraits2, x: 50, y: 65 },
-    { img: portraits6, x: 285, y: 165 },
-    { img: portraits3, x: 210, y: 65 },
-    { img: portraits8, x: 205, y: 267 },
-    { img: portraits5, x: 130, y: 165 },
-    { img: portraits7, x: 50, y: 267 },
-    { img: portraits4, x: 360, y: 65 },
-  ];
+  images.push(portraits2);
+  images.push(portraits3);
+  images.push(portraits4);
+  images.push(portraits5);
+  images.push(portraits6);
+  images.push(portraits7);
+  images.push(portraits8);
+  images.push(portraits9);
 }
 
 function draw() {
   image(train1, 0, 0);
-
-  for (let i = 0; i < images.length; i++) {
-    if (counter > 4 + i) { 
-      image(images[i].img, images[i].x, images[i].y);
-    }
-  }
-
-
+  filter(POSTERIZE, 4);
+  //pixelated for train1  
   for (let i = 0; i < 180; i++) { 
     let x = random(train1.width);
     let y = random(train1.height);
@@ -62,14 +53,15 @@ function draw() {
     rect(x, y, 15, 15);
   }
 
-  filter(POSTERIZE, 4);
-
-  let randomPortrait = random(images).img;
-  let randomX = random(width - 80); 
-  let randomY = random(height - 80);
-  image(randomPortrait, randomX, randomY);
+  
+  //randomizing amount of images to appear on screen
+  let numPortraits = int(random(images.length));
+  for (let i = 0; i < numPortraits; i++) {
+    let randomPortrait = random(images); 
+    let randX = random(width - 80); 
+    let randY = random(height - 80); 
+    image(randomPortrait, randX, randY); 
 
   counter += 0.02;
 }
-
-
+}
