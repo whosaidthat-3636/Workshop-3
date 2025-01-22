@@ -1,5 +1,4 @@
 let train1, portraits2, portraits3, portraits4, portraits5, portraits6, portraits7, portraits8, portraits9; 
-let counter = 0; 
 let images = []; 
 
 function preload() {
@@ -62,6 +61,7 @@ function draw() {
     let randY = random(height - 80); 
     image(randomPortrait, randX, randY); 
 
-  counter += 0.02;
+  tint(random(255), random(255), random(255));  
+
 }
 }
