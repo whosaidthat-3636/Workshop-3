@@ -19,6 +19,7 @@ function setup() {
   createCanvas(500, 600);
   background(255);
   pixelDensity(1);
+  frameRate(1);
 
   train1.resize(0, 600); 
   portraits2.resize(80, 0);
@@ -47,7 +48,7 @@ function draw() {
 
   for (let i = 0; i < images.length; i++) {
     if (counter > 4 + i) { 
-    image(images[i].img, images[i].x, images[i].y);
+      image(images[i].img, images[i].x, images[i].y);
     }
   }
 
@@ -60,7 +61,12 @@ function draw() {
     rect(x, y, 15, 15);
   }
 
-  counter += 0.02; 
-
   filter(POSTERIZE, 4);
+
+  let randomPortrait = random(images).img;
+  let randomX = random(width - 80); 
+  let randomY = random(height - 80);
+  image(randomPortrait, randomX, randomY);
+
+  counter += 0.02;
 }
