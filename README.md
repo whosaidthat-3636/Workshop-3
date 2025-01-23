@@ -20,7 +20,7 @@ image/text/etc(r, mouseX, mouseY);}
 
 ### 2) button as opposed to mouse click
 ```
-let button = createButton('text display';)
+let button = createButton('text display');
 ```
 **_in SETUP_**
 ```
@@ -51,33 +51,43 @@ checkbox.position(x, y);
 if(checkbox.checked()){
 conditional statement}
 // if checkbox is checked, condition will be executed
-```
 ie. let r = random(image/text/etc);
 image/text/etc(r, x, y);
 else {
 conditional statement};
-	- else = if unchecked condition will occur
+// else = if unchecked condition will occur
+```
 
 ### 4) slider
-let slider
-in SETUP
+```
+let slider;
+```
+**_in SETUP_**
+```
 slider = createSlider(0, 255);
-	- 0 min value, 255 max value
+// 0 min value, 255 max value
 slider.postion(x, y);
 slider.size(value%);
-in DRAW
+```
+**_in DRAW_**
+```
 let val = slider.value();
 	- in DRAW because its constantly changing 
 command(val);/ inputs of other commands ie in images with update pixel
+```
 
-5) drop down menu
-in SETUP
+### 5) drop down menu
+**_in SETUP_**
+```
 selection = createSelect();
 selection.position(x,y);
 selection.option('display text');
 selection.option('display text');
 selection.option('display text');
-in DRAW
+```
+
+**_in DRAW_**
+```
 let x = selection.selected();
 if(x === selection option){
 image(variable, x, y);
@@ -85,31 +95,41 @@ image(variable, x, y);
 image(variable, x, y);
 } else if(x === selection option){
 image(variable, x, y);
-	- conditions based on option chosen
-- three equals: exactly equal to
+// conditions based on option chosen
+// three equals: exactly equal to
+```
 
-6) inputs
+### 6) inputs
 - input box 
-in SETUP
+**_in SETUP_**
+```
 theInput = createInput();
 theInput.position(x, y);
-in DRAW
+```
+**_in DRAW_**
+```
 let text = theInput.value();
 text(words, x, y);
+```
 
-7) using text
+### 7) using text
+```
 function preload(){
 variable = loadStrings('texts/txt file name')}
+```
 
-8) formatting
+### 8) formatting
+```
 variable = create element('h2, Questions?')
-	- h2: heading size
-	- Questions?: display text
+// h2: heading size
+// Questions?: display text
 greeting.style('color', 'black');
 greeting.position();
+```
 
-9) ask something function
-in SETUP
+### 9) ask something function
+**_in SETUP_**
+```
 function askSomething(){
 question = inputs.value();
 inputs.value('');
@@ -117,17 +137,23 @@ listQuestions.push(question);}
 
 if(listQuestions.length </> value){
 listQuestions.shift();}
-	- if inputs exceeds value then inputs will shift and allow other inputs to appear
-in DRAW
+// if inputs exceeds value then inputs will shift and allow other inputs to appear
+```
+
+**_in DRAW_**
+```
 for(x=0; x <listQuestions.length; x++){
 text(listQuestions[x], x, y,)}
-	- text into input box to display on set coordinates in the for command
+// text into input box to display on set coordinates in the for command
+```
 
-10) sizing sketch to browser
+### 10) sizing sketch to browser
+```
 createCanvas(windowWidth, windowHeight);
 function windowResized(){
 resizeCanvas(windowWidth, windowHeight);}
-	- windowResized: window size is constant 
+// windowResized: window size is constant
+```
 
 
 
