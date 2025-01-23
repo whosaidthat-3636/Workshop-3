@@ -9,53 +9,56 @@ Link: [https://whosaidthat-3636.github.io/Workshop-3/]
 ## Notes 
 ### 1) location of image based on mousepressed
 - preload function with loadImage and array 
+
 **_in SETUP_**
 ```
 function mousePressed() {
 let r = random(variable);
 image/text/etc(r, mouseX, mouseY);}
-  // when mouse pressed on x, y coordinate imagery is presented on the coordinated hovered by mouse
+// when mouse pressed on x, y coordinate imagery is presented on the coordinated hovered by mouse
 ```
 
 ### 2) button as opposed to mouse click
 ```
 let button = createButton('text display';)
 ```
-in SETUP
+**_in SETUP_**
 ```
-button.position(x, y);   
-	// custom position of button
+button.position(x, y);
+// custom position of button
 button.mousePressed(()=>{
-	// determine what happens when button is pressed
+// determine what happens when button is pressed
 let r = random(array variable);
 image/text/etc(r, specific x, specific y);
-  // image placed at a specific coordinate/
+// image placed at a specific coordinate/
 image/text/etc(r, random(width), random(height));
-  // image placed at random})
+// image placed at random})
 ```
 
-3) checkbox
+### 3) checkbox
 - create checkbox variable
+```
 let checkbox;
-in SETUP
+```
+**_in SETUP_**
+```
 checkbox = createCheckbox();
 checkbox.position(x, y);
-	- custom position of checkbox
-in DRAW
+// custom position of checkbox
+```
+**_in DRAW_**
+```
 if(checkbox.checked()){
 conditional statement}
-	- if checkbox is checked, condition will be executed
-
-
-
-
+// if checkbox is checked, condition will be executed
+```
 ie. let r = random(image/text/etc);
 image/text/etc(r, x, y);
 else {
 conditional statement};
 	- else = if unchecked condition will occur
 
-4) slider
+### 4) slider
 let slider
 in SETUP
 slider = createSlider(0, 255);
