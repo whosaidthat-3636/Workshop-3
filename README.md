@@ -54,9 +54,10 @@ function setup() {
 ```
 
 ### 3. Images
-- Intially set the images in row and columns and have it at a set coordinate but having it appear at random amounts each time at
+- Portraits overlap train1 img
+- Intially set the portraits in row and columns and have it at a set coordinate but having it appear at random amounts each time at
 <img width="614" alt="image" src="https://github.com/user-attachments/assets/39c034ec-85bd-447c-8e1c-ab284c6be16e" />
-- I had diffculty executing that so changed course of action
+- I had diffculty executing that so changed my course of action
 ```
 function setup() {
   createCanvas(500, 600);
@@ -84,15 +85,19 @@ function setup() {
   images.push(portraits9);
 }
 ```
+
+### 4. Manipultions and Filters
 - Using posterize filter
 - Creating pixelated image manipulations at randomized
-- Pixels is meant to be small and doesn't entirely take up the image
+- Pixels are meant to be small and randomized across the sketch
+- Loop repeats 180 times, picks a random spot each time on the image
+- Fill (colour picks from the image)
 ```
 function draw() {
   image(train1, 0, 0);
   filter(POSTERIZE, 4);
   //pixelated for train1  
-  for (let i = 0; i < 180; i++) { 
+  for (let i = 0; i < 180; i++) {
     let x = random(train1.width);
     let y = random(train1.height);
     let c = train1.get(int(x), int(y));
@@ -100,6 +105,19 @@ function draw() {
     noStroke();
     rect(x, y, 15, 15);
   }
+```
+- 8 portraits in total, randomizing the amount of images to appear each time
+- Applying tint filter to have different colours using randomize
+```
+//randomizing amount of images to appear on screen
+  let numPortraits = int(random(images.length));
+  for (let i = 0; i < numPortraits; i++) {
+    let randomPortrait = random(images); 
+    let randX = random(width - 80); 
+    let randY = random(height - 80); 
+    image(randomPortrait, randX, randY); 
+
+  tint(random(255), random(255), random(255));  
 ```
 
 
