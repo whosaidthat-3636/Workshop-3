@@ -56,7 +56,9 @@ function setup() {
 ### 3. Images
 - Portraits overlap train1 img
 - Intially set the portraits in row and columns and have it at a set coordinate but having it appear at random amounts each time at
+
 <img width="614" alt="image" src="https://github.com/user-attachments/assets/39c034ec-85bd-447c-8e1c-ab284c6be16e" />
+
 - I had diffculty executing that so changed my course of action
 ```
 function setup() {
