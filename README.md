@@ -54,13 +54,39 @@ function setup() {
 ```
 
 ### 3. Images
-- Intially set the images in row and columns 
+- Intially set the images in row and columns and have it at a set coordinate but having it appear at random amounts each time at
 <img width="614" alt="image" src="https://github.com/user-attachments/assets/39c034ec-85bd-447c-8e1c-ab284c6be16e" />
+- I had diffculty executing that so changed course of action
+```
+function setup() {
+  createCanvas(500, 600);
+  background(255);
+  pixelDensity(1);
+  frameRate(1);
 
-- Smth happening idk what
+  train1.resize(0, 600); 
+  portraits2.resize(80, 0);
+  portraits3.resize(82, 0);
+  portraits4.resize(80, 0);
+  portraits5.resize(80, 0);
+  portraits6.resize(81, 0);
+  portraits7.resize(82, 0);
+  portraits8.resize(82, 0);
+  portraits9.resize(82, 0);
 
+  images.push(portraits2);
+  images.push(portraits3);
+  images.push(portraits4);
+  images.push(portraits5);
+  images.push(portraits6);
+  images.push(portraits7);
+  images.push(portraits8);
+  images.push(portraits9);
+}
+```
 - Using posterize filter
-- Creating pixelated image manipulations at randomized 
+- Creating pixelated image manipulations at randomized
+- Pixels is meant to be small and doesn't entirely take up the image
 ```
 function draw() {
   image(train1, 0, 0);
